@@ -167,7 +167,7 @@ function Notification({ children }: INotiticationProps) {
                             <View style={styles.contentIcon}>{notification.icon}</View>
                         ) : null}
                         <View style={styles.contentTextWrapper}>
-                            <Text numberOfLines={2} style={styles.contentTitle}>
+                            <Text numberOfLines={1} style={styles.contentTitle}>
                                 {notification.title}
                             </Text>
                             {notification.message ? (

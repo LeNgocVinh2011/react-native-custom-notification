@@ -135,7 +135,7 @@ function Notification({ children }) {
                     <TouchableOpacity onPress={handlePressNotification} style={[styles.content, { backgroundColor: notification.color }]}>
                         {notification.icon ? (<View style={styles.contentIcon}>{notification.icon}</View>) : null}
                         <View style={styles.contentTextWrapper}>
-                            <Text numberOfLines={2} style={styles.contentTitle}>
+                            <Text numberOfLines={1} style={styles.contentTitle}>
                                 {notification.title}
                             </Text>
                             {notification.message ? (<Text numberOfLines={2} style={styles.contentMessage}>

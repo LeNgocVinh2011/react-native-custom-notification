@@ -3,6 +3,7 @@ import { View, StyleSheet, Animated, TouchableOpacity, Text, Platform, } from 'r
 const NotificationContext = React.createContext({
     showNotification: () => { },
     isNotificationShown: false,
+    notiObjectId: '',
 });
 export function useNotification() {
     return useContext(NotificationContext);
@@ -153,6 +154,7 @@ function Notification({ children }) {
     return (<NotificationContext.Provider value={{
             showNotification: handleShowNotification,
             isNotificationShown: Boolean(notification),
+            notiObjectId: notification ? notification.notiObjectId : '',
         }}>
             <View style={style}>{content}</View>
             {children}

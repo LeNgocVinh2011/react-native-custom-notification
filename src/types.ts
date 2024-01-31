@@ -7,6 +7,7 @@ export interface INotiticationProps {
 export interface INotificationContext {
     showNotification: (notification: INotification) => void;
     isNotificationShown: boolean;
+    notiObjectId?: string;
 }
 
 export interface INotification {
@@ -16,4 +17,5 @@ export interface INotification {
     onPress?: () => void;
     icon?: ReactElement;
     color?: string;
+    notiObjectId?: string;
 }

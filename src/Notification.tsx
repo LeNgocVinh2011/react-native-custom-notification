@@ -14,6 +14,7 @@ import { INotificationContext, INotification, INotiticationProps } from './types
 const NotificationContext = React.createContext<INotificationContext>({
     showNotification: () => {},
     isNotificationShown: false,
+    notiObjectId: '',
 });
 
 export function useNotification() {
@@ -193,6 +194,7 @@ function Notification({ children }: INotiticationProps) {
             value={{
                 showNotification: handleShowNotification,
                 isNotificationShown: Boolean(notification),
+                notiObjectId: notification ? notification.notiObjectId : '',
             }}
         >
             <View style={style}>{content}</View>

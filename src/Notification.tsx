@@ -91,7 +91,7 @@ function Notification({ children }: INotiticationProps) {
     }, [animatedValue]);
 
     const handleShowNotification = useCallback(
-        ({ title, showingTime = 2000, onPress, message, icon, color = '#fff' }: INotification) => {
+        ({ title, showingTime = 2000, onPress, message, icon, color = '#fff', notiObjectId = '' }: INotification) => {
             if (!notification) {
                 setNotification({
                     title,
@@ -100,6 +100,7 @@ function Notification({ children }: INotiticationProps) {
                     message,
                     icon,
                     color,
+                    notiObjectId,
                 });
 
                 Animated.timing(animatedValue, {

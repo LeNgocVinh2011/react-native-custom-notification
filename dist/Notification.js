@@ -74,7 +74,7 @@ function Notification({ children }) {
             setNotification(undefined);
         });
     }, [animatedValue]);
-    const handleShowNotification = useCallback(({ title, showingTime = 2000, onPress, message, icon, color = '#fff' }) => {
+    const handleShowNotification = useCallback(({ title, showingTime = 2000, onPress, message, icon, color = '#fff', notiObjectId = '' }) => {
         if (!notification) {
             setNotification({
                 title,
@@ -83,6 +83,7 @@ function Notification({ children }) {
                 message,
                 icon,
                 color,
+                notiObjectId,
             });
             Animated.timing(animatedValue, {
                 toValue: 1,

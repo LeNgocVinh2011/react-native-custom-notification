@@ -15,6 +15,7 @@ const NotificationContext = React.createContext<INotificationContext>({
     showNotification: () => {},
     isNotificationShown: false,
     notiObjectId: '',
+    notiCate: 0,
 });
 
 export function useNotification() {
@@ -91,7 +92,7 @@ function Notification({ children }: INotiticationProps) {
     }, [animatedValue]);
 
     const handleShowNotification = useCallback(
-        ({ title, showingTime = 2000, onPress, message, icon, color = '#fff', notiObjectId = '' }: INotification) => {
+        ({ title, showingTime = 2000, onPress, message, icon, color = '#fff', notiObjectId = '', notiCate }: INotification) => {
             if (!notification) {
                 setNotification({
                     title,
@@ -101,6 +102,7 @@ function Notification({ children }: INotiticationProps) {
                     icon,
                     color,
                     notiObjectId,
+                    notiCate,
                 });
 
                 Animated.timing(animatedValue, {
@@ -196,6 +198,7 @@ function Notification({ children }: INotiticationProps) {
                 showNotification: handleShowNotification,
                 isNotificationShown: Boolean(notification),
                 notiObjectId: notification ? notification.notiObjectId : '',
+                notiCate: notification ? notification.notiCate : 0,
             }}
         >
             <View style={style}>{content}</View>

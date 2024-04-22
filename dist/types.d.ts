@@ -6,6 +6,7 @@ export interface INotificationContext {
     showNotification: (notification: INotification) => void;
     isNotificationShown: boolean;
     notiObjectId?: string;
+    notiCate: number | undefined;
 }
 export interface INotification {
     title: string;
@@ -15,4 +16,5 @@ export interface INotification {
     icon?: ReactElement;
     color?: string;
     notiObjectId?: string;
+    notiCate?: number;
 }

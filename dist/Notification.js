@@ -20,27 +20,23 @@ const styles = StyleSheet.create({
         elevation: 1,
     },
     containerShown: {
-        height: 65,
+        height: 80,
     },
     content: {
         flex: 1,
-        backgroundColor: '#fff',
-        maxWidth: 400,
-        marginHorizontal: 15,
+        backgroundColor: '#181918BF',
+        marginHorizontal: 16,
         paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingVertical: 12,
         alignItems: 'center',
-        borderRadius: 10,
-        shadowOffset: { width: 0, height: 2 },
-        shadowColor: 'black',
-        shadowOpacity: 0.15,
+        borderRadius: 8,
         flexDirection: 'row',
-        elevation: 5,
     },
     contentIcon: {
-        width: 45,
-        height: 45,
-        marginRight: 10,
+        width: 24,
+        height: 24,
+        margin: 10,
+        marginRight: 20,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -51,14 +47,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     contentTitle: {
-        color: '#444',
+        color: '#ffffff',
         fontSize: 16,
-        fontWeight: '600',
-        marginBottom: 2,
+        fontWeight: '500',
+        lineHeight: 24,
     },
     contentMessage: {
-        fontSize: 13,
-        color: '#777',
+        fontSize: 14,
+        lineHeight: 20,
+        color: '#ffffff',
     },
 });
 function Notification({ children }) {
@@ -75,7 +72,7 @@ function Notification({ children }) {
             setNotification(undefined);
         });
     }, [animatedValue]);
-    const handleShowNotification = useCallback(({ title, showingTime = 2000, onPress, message, icon, color = '#fff', notiObjectId = '', notiCate }) => {
+    const handleShowNotification = useCallback(({ title, showingTime = 2000, onPress, message, icon, color = '#181918BF', notiObjectId = '', notiCate }) => {
         if (!notification) {
             setNotification({
                 title,
